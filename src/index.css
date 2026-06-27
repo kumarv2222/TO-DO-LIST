@@ -1,0 +1,36 @@
+h1{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+h2{
+  text-align: center;
+  font-size: medium;
+}
+p{
+  text-align: center;
+  font-weight: bold;
+}
+#sel{
+  display: inline-block;
+  margin-left: 20px;
+  background-color: antiquewhite;
+}
+#input{
+  display:inline;
+  
+}
+button{
+  border: none;
+  background-color: burlywood;
+}
+form{
+  text-align: center;
+}
+.task-list{
+  text-align: center;
+  font-family: 'Times New Roman', Times, serif;
+  border: solid black 1px;
+}
+
+
