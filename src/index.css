@@ -1,37 +1,91 @@
-h1{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-weight: bold;
-  text-align: center;
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --primary:#7c3aed;
+  --accent:#f2c94c;
+  --muted:#6b7280;
+  --border:#e5e7eb;
 }
-h2{
-  text-align: center;
-  font-size: medium;
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:var(--bg);
+  color:#0f172a;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+  padding:20px;
 }
-p{
-  text-align: center;
-  font-weight: bold;
+
+.app{
+  width:100%;
+  max-width:720px;
+  background:var(--card);
+  border-radius:12px;
+  box-shadow:0 8px 30px rgba(2,6,23,0.08);
+  padding:24px;
 }
-#sel{
-  display: inline-block;
-  margin-left: 20px;
-  background-color: antiquewhite;
-}
-#input{
-  display:inline;
-  
+
+h1{font-size:1.6rem; text-align:center; margin:0 0 8px 0}
+h2{font-size:1rem; text-align:center; color:var(--muted); margin:0 0 18px 0}
+p{ text-align:center; color:var(--muted); margin:12px 0 }
+
+form{display:flex; gap:8px; align-items:center; justify-content:center; margin-bottom:18px}
+input[type="text"], select{
+  padding:10px 12px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  width:60%;
+  font-size:0.95rem;
 }
 button{
-  border: none;
-  background-color: burlywood;
+  padding:10px 14px;
+  background:var(--primary);
+  color:white;
+  border-radius:8px;
+  border:none;
+  cursor:pointer;
 }
-form{
-  text-align: center;
-  background-color: aqua;
-}
+button:active{transform:translateY(1px)}
+
 .task-list{
-  text-align: center;
+  list-style:none;
+  margin:0;
+  padding:0;
   font-family: 'Times New Roman', Times, serif;
-  border: solid black 1px;
+  border:1px solid var(--border);
+  border-radius:8px;
+  overflow:hidden;
+}
+
+.task-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 14px;
+  gap:12px;
+  background:transparent;
+}
+.task-item:nth-child(odd){background:linear-gradient(180deg,rgba(124,58,237,0.03),transparent)}
+
+.task-left{display:flex; align-items:center; gap:12px}
+.checkbox{width:18px; height:18px; border:1px solid var(--border); border-radius:4px; display:inline-block}
+.task-title{font-size:1rem}
+.completed{ text-decoration:line-through; color:var(--muted); opacity:0.85 }
+
+.task-actions{display:flex; gap:8px; align-items:center}
+.icon-btn{background:transparent; border:1px solid var(--border); padding:6px; border-radius:6px; cursor:pointer}
+
+.progress-tracker{margin-top:14px}
+.progress{height:10px; background:var(--border); border-radius:999px; overflow:hidden}
+.progress > span{display:block; height:100%; background:linear-gradient(90deg,var(--primary),#5b21b6); width:0%}
+
+@media (max-width:520px){
+  input[type="text"], select{width:100%}
+  form{flex-direction:column}
 }
 
 
